@@ -21,7 +21,37 @@ public abstract class DroneEventsProcessing {
         return validateEvent(eventName, DroneEvents.TURN_RIGHT);
     }
 
-    public boolean move(Drone drone){
-        return true;
+    public void event(char eventName){}
+
+    public void turnLeft(Drone drone){
+      if(drone.getPosition() instanceof NorthPosition){
+          Position position = new WestPosition(drone.getPosition().coordinateX, drone.getPosition().coordinateY);
+          drone.setPosition(position);
+      }else if(drone.getPosition() instanceof WestPosition){
+          Position position = new SouthPosition(drone.getPosition().coordinateX, drone.getPosition().coordinateY);
+          drone.setPosition(position);
+      }else if(drone.getPosition() instanceof SouthPosition){
+          Position position = new EastPosition(drone.getPosition().coordinateX, drone.getPosition().coordinateY);
+          drone.setPosition(position);
+      }else if(drone.getPosition() instanceof EastPosition) {
+          Position position = new NorthPosition(drone.getPosition().coordinateX, drone.getPosition().coordinateY);
+          drone.setPosition(position);
+      }
+    }
+
+    public void turnRight(Drone drone){
+        if(drone.getPosition() instanceof NorthPosition){
+            Position position = new EastPosition(drone.getPosition().coordinateX, drone.getPosition().coordinateY);
+            drone.setPosition(position);
+        }else if(drone.getPosition() instanceof EastPosition){
+            Position position = new SouthPosition(drone.getPosition().coordinateX, drone.getPosition().coordinateY);
+            drone.setPosition(position);
+        }else if(drone.getPosition() instanceof SouthPosition){
+            Position position = new WestPosition(drone.getPosition().coordinateX, drone.getPosition().coordinateY);
+            drone.setPosition(position);
+        }else if(drone.getPosition() instanceof WestPosition) {
+            Position position = new NorthPosition(drone.getPosition().coordinateX, drone.getPosition().coordinateY);
+            drone.setPosition(position);
+        }
     }
 }

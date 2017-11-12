@@ -3,12 +3,16 @@ package Drone;
 /**
  * Created by carlvarn on 12/11/2017.
  */
-public interface Position {
+public abstract class Position {
 
-    int coordinateX = 0;
-    int coordinateY = 0;
-    char orientation = 'N';
+    protected int coordinateX;
+    protected int coordinateY;
 
-    public void move();
+    public Position(int coordinateX, int coordinateY){
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
+    }
+
+    public abstract void move();
 
 }
