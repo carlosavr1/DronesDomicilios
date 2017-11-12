@@ -8,6 +8,9 @@ public class Instruction {
 
     public Instruction(char value){
         this.instructionValue = value;
+    }
 
+    public char getInstructionValue(){
+        return instructionValue;
     }
 }

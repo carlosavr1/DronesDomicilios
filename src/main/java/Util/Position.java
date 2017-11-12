@@ -17,4 +17,10 @@ public abstract class Position {
 
     public abstract void printPosition();
 
+    public abstract String position();
+
+    public abstract Directions left();
+
+    public abstract Directions right();
+
 }

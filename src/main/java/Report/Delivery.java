@@ -6,9 +6,13 @@ import Util.Position;
  * Created by carlvarn on 12/11/2017.
  */
 public class Delivery {
-    Position position;
+    private String deliveryPosition;
 
-    public Delivery(Position position){
-        this.position = position;
+    public Delivery(String deliveryPosition){
+        this.deliveryPosition = deliveryPosition;
+    }
+
+    public String getDeliveryPosition(){
+        return deliveryPosition;
     }
 }

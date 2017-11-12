@@ -18,7 +18,23 @@ public class WestPosition extends Position {
     }
 
     @Override
-    public void printPosition(){
-        System.out.println("("+coordinateX+", "+coordinateY+") dirección Oeste");
+    public Directions left(){
+        return Directions.SOUTH;
     }
+
+    @Override
+    public Directions right(){
+        return Directions.NORTH;
+    }
+
+    @Override
+    public String position(){
+        return "("+coordinateX+", "+coordinateY+") dirección Oeste";
+    }
+
+    @Override
+    public void printPosition(){
+        System.out.println(position());
+    }
+
 }

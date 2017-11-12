@@ -18,7 +18,22 @@ public class EastPosition extends Position {
     }
 
     @Override
+    public Directions left(){
+        return Directions.NORTH;
+    }
+
+    @Override
+    public Directions right(){
+        return Directions.SOUTH;
+    }
+
+    @Override
+    public String position(){
+        return "("+coordinateX+", "+coordinateY+") dirección Este";
+    }
+
+    @Override
     public void printPosition(){
-        System.out.println("("+coordinateX+", "+coordinateY+") dirección Este");
+        System.out.println(position());
     }
 }
