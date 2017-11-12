@@ -1,4 +1,6 @@
-package Drone;
+package Util;
+
+import Util.Position;
 
 /**
  * Created by carlvarn on 12/11/2017.
@@ -10,7 +12,13 @@ public class EastPosition extends Position {
     }
 
     @Override
-    public void move() {
+    public Position nextPosition() {
         this.coordinateX++;
+        return this;
+    }
+
+    @Override
+    public void printPosition(){
+        System.out.println("("+coordinateX+", "+coordinateY+") dirección Este");
     }
 }

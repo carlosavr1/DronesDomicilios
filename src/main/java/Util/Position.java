@@ -1,18 +1,20 @@
-package Drone;
+package Util;
 
 /**
  * Created by carlvarn on 12/11/2017.
  */
 public abstract class Position {
 
-    protected int coordinateX;
-    protected int coordinateY;
+    public int coordinateX;
+    public int coordinateY;
 
     public Position(int coordinateX, int coordinateY){
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
     }
 
-    public abstract void move();
+    public abstract Position nextPosition();
+
+    public abstract void printPosition();
 
 }

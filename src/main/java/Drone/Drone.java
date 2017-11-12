@@ -1,31 +1,19 @@
 package Drone;
 
+import Util.NorthPosition;
+import Util.Position;
+
 /**
  * Created by carlvarn on 12/11/2017.
  */
-public class Drone extends DroneEventsProcessing{
+public class Drone {
     private Position position;
 
-    public Drone() {
-        position = new NorthPosition(0,0);
-    }
-
-    @Override
-    public void event(char eventName){
-        if(validateTurnLeft(eventName)){
-            turnLeft(this);
-        }else if(validateTurnRight(eventName)){
-            turnRight(this);
-        }else{
-            this.position.move();
-        }
-    }
+    public Drone() {}
 
     public Position getPosition(){
         return this.position;
     }
 
-    public void setPosition(Position position){
-        this.position = position;
-    }
+    public void setPosition(Position position){ this.position = position; }
 }

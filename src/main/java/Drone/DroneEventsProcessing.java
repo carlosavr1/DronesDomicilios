@@ -1,5 +1,7 @@
 package Drone;
 
+import Util.*;
+
 /**
  * Created by carlvarn on 12/11/2017.
  */
@@ -21,7 +23,7 @@ public abstract class DroneEventsProcessing {
         return validateEvent(eventName, DroneEvents.TURN_RIGHT);
     }
 
-    public void event(char eventName){}
+    public void event(Drone drone, char eventName){}
 
     public void turnLeft(Drone drone){
       if(drone.getPosition() instanceof NorthPosition){
