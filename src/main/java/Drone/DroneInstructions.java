@@ -3,7 +3,7 @@ package Drone;
 /**
  * Created by carlvarn on 12/11/2017.
  */
-public enum DroneEvents {
+public enum DroneInstructions {
     MOVE('A'),
     TURN_LEFT('I'),
     TURN_RIGHT('D');
@@ -12,7 +12,7 @@ public enum DroneEvents {
         return value;
     }
 
-    private DroneEvents(char value) {
+    private DroneInstructions(char value) {
         this.value = value;
     }
 
