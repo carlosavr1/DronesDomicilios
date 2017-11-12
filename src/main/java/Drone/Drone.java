@@ -9,7 +9,9 @@ import Util.Position;
 public class Drone {
     private Position position;
 
-    public Drone() {}
+    public Drone(Position position) {
+        this.position = position;
+    }
 
     public Position getPosition(){
         return this.position;

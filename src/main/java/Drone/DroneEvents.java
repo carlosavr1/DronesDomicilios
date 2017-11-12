@@ -3,8 +3,18 @@ package Drone;
 /**
  * Created by carlvarn on 12/11/2017.
  */
-public interface DroneEvents {
-    public static final char MOVE = 'A';
-    public static final char TURN_LEFT = 'I';
-    public static final char TURN_RIGHT = 'D';
+public enum DroneEvents {
+    MOVE('A'),
+    TURN_LEFT('I'),
+    TURN_RIGHT('D');
+
+    public char value() {
+        return value;
+    }
+
+    private DroneEvents(char value) {
+        this.value = value;
+    }
+
+    private final char value;
 }

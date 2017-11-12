@@ -12,18 +12,18 @@ public abstract class DroneEventsProcessing {
     }
 
     public boolean validateMove(char eventName){
-        return validateEvent(eventName, DroneEvents.MOVE);
+        return validateEvent(eventName, DroneEvents.MOVE.value());
     }
 
     public boolean validateTurnLeft(char eventName){
-        return validateEvent(eventName, DroneEvents.TURN_LEFT);
+        return validateEvent(eventName, DroneEvents.TURN_LEFT.value());
     }
 
     public boolean validateTurnRight(char eventName){
-        return validateEvent(eventName, DroneEvents.TURN_RIGHT);
+        return validateEvent(eventName, DroneEvents.TURN_RIGHT.value());
     }
 
-    public void event(Drone drone, char eventName){}
+    public void executeInstruction(Drone drone, Instruction instruction){}
 
     public void turnLeft(Drone drone){
       if(drone.getPosition() instanceof NorthPosition){
