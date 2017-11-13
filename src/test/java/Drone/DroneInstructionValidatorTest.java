@@ -4,9 +4,6 @@ import Util.Instruction;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by joseberrio on 13/11/2017.
- */
 public class DroneInstructionValidatorTest {
     @Test
     public void validateTurnLeftMustReturnTrue() {

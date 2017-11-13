@@ -1,6 +1,3 @@
-/**
- * Created by carlvarn on 12/11/2017.
- */
 import Adapter.FileFacade;
 import Drone.*;
 import Report.*;

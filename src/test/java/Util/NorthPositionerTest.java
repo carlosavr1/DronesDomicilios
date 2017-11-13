@@ -5,9 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by carlvarn on 13/11/2017.
- */
 public class NorthPositionerTest {
 
     NorthPositioner northPositioner;

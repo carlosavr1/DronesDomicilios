@@ -5,12 +5,7 @@ import mockit.integration.junit4.JMockit;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 import static org.junit.Assert.assertEquals;
-
-/**
- * Created by carlvarn on 13/11/2017.
- */
 
 @RunWith(JMockit.class)
 public class WestPositionerTest {

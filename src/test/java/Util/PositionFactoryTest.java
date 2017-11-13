@@ -1,13 +1,8 @@
 package Util;
 
-import org.junit.Assert;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by joseberrio on 13/11/2017.
- */
 public class PositionFactoryTest {
     @Test
     public void createInitialPositionMustInitDrone() {

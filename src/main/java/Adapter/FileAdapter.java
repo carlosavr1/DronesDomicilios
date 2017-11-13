@@ -60,17 +60,12 @@ public class FileAdapter {
 
         try {
 
-            String content = "This is the content to write into file\n";
-
             fw = new FileWriter(file.getPath()+file.getName());
             bw = new BufferedWriter(fw);
             for (Delivery delivery: report
                  ) {
                 bw.write(delivery.getDeliveryPosition()+"\n");
             }
-
-
-            System.out.println("Done");
 
         } catch (IOException e) {
 

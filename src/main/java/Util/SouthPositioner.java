@@ -1,10 +1,5 @@
 package Util;
 
-import Util.Position;
-
-/**
- * Created by carlvarn on 12/11/2017.
- */
 public class SouthPositioner extends Positioner {
 
     public SouthPositioner(){
