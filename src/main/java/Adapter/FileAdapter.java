@@ -1,9 +1,9 @@
 package Adapter;
 
+import Report.Delivery;
+
+import java.io.*;
 import java.io.BufferedReader;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +49,47 @@ public class FileAdapter {
 
             }
             return orders;
+
+        }
+    }
+
+    public void writeReport(String fileName, List<Delivery> report){
+        BufferedWriter bw = null;
+        FileWriter fw = null;
+
+        try {
+
+            String content = "This is the content to write into file\n";
+
+            fw = new FileWriter(fileName);
+            bw = new BufferedWriter(fw);
+            for (Delivery delivery: report
+                 ) {
+                bw.write(delivery.getDeliveryPosition()+"\n");
+            }
+
+
+            System.out.println("Done");
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        } finally {
+
+            try {
+
+                if (bw != null)
+                    bw.close();
+
+                if (fw != null)
+                    fw.close();
+
+            } catch (IOException ex) {
+
+                ex.printStackTrace();
+
+            }
 
         }
     }
