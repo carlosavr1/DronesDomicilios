@@ -32,7 +32,7 @@ public class DroneController {
         }
     }
 
-    private Positioner createPositioner(Directions actualDirection){
+    protected Positioner createPositioner(Directions actualDirection){
         Positioner positioner = null;
         if(actualDirection.equals(Directions.NORTH)){
             positioner = new NorthPositioner();
