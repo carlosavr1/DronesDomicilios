@@ -1,12 +1,11 @@
 package Drone;
 
-import Util.NorthPosition;
 import Util.Position;
 
 /**
  * Created by carlvarn on 12/11/2017.
  */
-public class Drone {
+public class  Drone {
     private Position position;
 
     public Drone(Position position) {

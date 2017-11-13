@@ -2,6 +2,8 @@ package Drone;
 
 import Util.*;
 
+import java.util.List;
+
 /**
  * Created by carlvarn on 12/11/2017.
  */
@@ -20,23 +22,29 @@ public class DroneController {
     }
 
     public void executeInstruction(Drone drone, Instruction instruction){
+        Positioner positioner = createPositioner(drone.getPosition().getDirection());
         if(droneInstructionValidator.validateTurnLeft(instruction)){
-            turnLeft(drone);
+            positioner.leftPosition(drone.getPosition());
         }else if(droneInstructionValidator.validateTurnRight(instruction)){
-            turnRight(drone);
+            positioner.rightPosition(drone.getPosition());
         }else if(droneInstructionValidator.validateMove(instruction)){
-            drone.setPosition(drone.getPosition().nextPosition());
+            positioner.nextPosition(drone.getPosition());
         }
     }
 
-    private void turnLeft(Drone drone){
-        Position position = positionFactory.createPositionWithDirectionAndCoordinates(drone.getPosition().left(),drone.getPosition().coordinateX, drone.getPosition().coordinateY);
-        drone.setPosition(position);
+    private Positioner createPositioner(Directions actualDirection){
+        Positioner positioner = null;
+        if(actualDirection.equals(Directions.NORTH)){
+            positioner = new NorthPositioner();
+        }else if(actualDirection.equals(Directions.EAST)){
+            positioner = new EastPositioner();
+        }else if(actualDirection.equals(Directions.SOUTH)){
+            positioner = new SouthPositioner();
+        }else if(actualDirection.equals(Directions.WEST)){
+            positioner = new WestPositioner();
+        }
+        return positioner;
     }
 
-    private void turnRight(Drone drone){
-        Position position = positionFactory.createPositionWithDirectionAndCoordinates(drone.getPosition().right(),drone.getPosition().coordinateX, drone.getPosition().coordinateY);
-        drone.setPosition(position);
-    }
 
 }

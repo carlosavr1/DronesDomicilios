@@ -1,7 +1,7 @@
 /**
  * Created by carlvarn on 12/11/2017.
  */
-import Adapter.FileAdapter;
+import Adapter.FileFacade;
 import Drone.*;
 import Report.*;
 import Util.Instruction;
@@ -10,10 +10,12 @@ import java.util.List;
 
 public class Main {
     public static void main(String args[]){
-        FileAdapter fileAdapter = new FileAdapter();
-        List<String> orders = fileAdapter.readOrder("D:\\tmp\\S4N\\Test\\in.txt");
+        FileFacade fileFacade = new FileFacade("D:\\tmp\\S4N\\Test\\", "in.txt", "D:\\tmp\\S4N\\Test\\", "out.txt");
+        List<String> orders = fileFacade.readOrders();
+
         DroneController droneController = new DroneController();
         Drone drone = droneController.createDrone();
+
         Report report = new Report();
         for (String order: orders
              ) {
@@ -23,10 +25,10 @@ public class Main {
                     ) {
                 droneController.executeInstruction(drone, new Instruction(instruction));
             }
-            drone.getPosition().printPosition();
-            Delivery delivery = new Delivery(drone.getPosition().position());
+            System.out.println(drone.getPosition().toString());
+            Delivery delivery = new Delivery(drone.getPosition().toString());
             report.getReport().add(delivery);
         }
-        fileAdapter.writeReport("D:\\tmp\\S4N\\Test\\out.txt", report.getReport());
+        fileFacade.writeReport(report.getReport());
     }
 }
