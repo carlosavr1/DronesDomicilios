@@ -11,4 +11,12 @@ public class File {
         this.name = name;
         this.path = path;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPath() {
+        return path;
+    }
 }
