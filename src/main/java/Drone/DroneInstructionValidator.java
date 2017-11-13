@@ -6,7 +6,7 @@ import Util.Instruction;
  * Created by carlvarn on 12/11/2017.
  */
 public class DroneInstructionValidator {
-    private boolean validateInstruction(char instructionName, char instructionToCompare){
+    protected boolean validateInstruction(char instructionName, char instructionToCompare){
         return instructionName == instructionToCompare;
     }
 
