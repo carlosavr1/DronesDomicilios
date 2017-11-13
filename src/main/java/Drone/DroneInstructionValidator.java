@@ -6,19 +6,19 @@ import Util.Instruction;
  * Created by carlvarn on 12/11/2017.
  */
 public class DroneInstructionValidator {
-    private boolean validateEvent(char eventName, char eventToCompare){
-        return eventName == eventToCompare;
+    private boolean validateInstruction(char instructionName, char instructionToCompare){
+        return instructionName == instructionToCompare;
     }
 
     public boolean validateMove(Instruction instruction){
-        return validateEvent(instruction.getInstructionValue(), DroneInstructions.MOVE.value());
+        return validateInstruction(instruction.getInstructionValue(), DroneInstructions.MOVE.value());
     }
 
     public boolean validateTurnLeft(Instruction instruction){
-        return validateEvent(instruction.getInstructionValue(), DroneInstructions.TURN_LEFT.value());
+        return validateInstruction(instruction.getInstructionValue(), DroneInstructions.TURN_LEFT.value());
     }
 
     public boolean validateTurnRight(Instruction instruction){
-        return validateEvent(instruction.getInstructionValue(), DroneInstructions.TURN_RIGHT.value());
+        return validateInstruction(instruction.getInstructionValue(), DroneInstructions.TURN_RIGHT.value());
     }
 }

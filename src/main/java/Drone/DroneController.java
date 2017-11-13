@@ -15,8 +15,7 @@ public class DroneController {
     }
 
     public Drone createDrone(){
-        PositionFactory position = new PositionFactory();
-        Drone drone = new Drone(position.createInitialPosition());
+        Drone drone = new Drone(positionFactory.createInitialPosition());
         return drone;
     }
 
