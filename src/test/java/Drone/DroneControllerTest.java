@@ -1,9 +1,5 @@
 package Drone;
 
-/**
- * Created by carlvarn on 13/11/2017.
- */
-
 import Util.*;
 import org.junit.Test;
 import org.junit.Before;

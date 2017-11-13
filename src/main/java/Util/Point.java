@@ -1,8 +1,5 @@
 package Util;
 
-/**
- * Created by carlvarn on 12/11/2017.
- */
 public class Point {
 
     private int coordinateX;
